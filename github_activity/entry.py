@@ -15,9 +15,8 @@ def cli_entry_point():
 def handle_activity(username):
     activity = requests.get(f'https://api.github.com/users/{username}/events')
     if(activity.status_code == 404):
-        print(f'This user doesnt exist')
+        print(f'This user doesnt exist.')
     else:
-        
         json = activity.json()
         push_event_count = 0
         pull_request_event_count = 0
